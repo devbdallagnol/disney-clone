@@ -15,7 +15,7 @@ const createSlide = () => {
     let h1 = document.createElement('h1');
     let p = document.createElement('p');
 
-    {
+
     // attaching all elements
     imgElement.appendChild(document.createTextNode(''));
     h1.appendChild(document.createTextNode(movies[slideIndex].name));
@@ -25,5 +25,19 @@ const createSlide = () => {
     slide.appendChild(content);
     slide.appendChild(imgElement);
     carousel.appendChild(slide);
-    }
+
+
+    // setting up image
+    imgElement.src = movies[slideIndex].image;
+    slideIndex++;
+
+    // setting elements classname
+    slide.className = 'slider';
+    content.className = 'slide-content';
+    h1.className = 'movie-title';
+    p.className = 'movie-des';
+
+    sliders.push(slide);
 }
+
+createSlide();
