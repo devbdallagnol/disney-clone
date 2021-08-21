@@ -38,6 +38,19 @@ const createSlide = () => {
     p.className = 'movie-des';
 
     sliders.push(slide);
+
+    //adding sliding effect
+
+    if(sliders.length){
+        sliders[0].style.marginLeft = `calc(-${100 * (sliders.length - 2)}% - ${30 * (sliders.length - 2)}px)`;
+    }
+
 }
 
-createSlide();
+for(let i = 0; i < 3; i++){
+    createSlide();
+}
+
+setInterval(() => {
+    createSlide();
+}, 3000);
